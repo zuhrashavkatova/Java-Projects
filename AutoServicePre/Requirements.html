@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title>OOP | Lab 7</title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1344.72">
+  <style type="text/css">
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 16.0px Times; color: #000000; -webkit-text-stroke: #000000}
+    p.p3 {margin: 0.0px 0.0px 6.0px 0.0px; font: 16.0px Times; color: #000000; -webkit-text-stroke: #000000; min-height: 14.0px}
+    p.p6 {margin: 0.0px 0.0px 0.0px 0.0px; font: 16.0px Times; color: #000000; -webkit-text-stroke: #000000; min-height: 14.0px}
+    span.s1 {font-kerning: none}
+    span.s2 {font-kerning: none; color: #000000}
+  </style>
+</head>
+<body>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; text-align: center; font: 24.0px Times; color: #000000; -webkit-text-stroke: #000000"><span class="s1"><b>Auto Service<br>
+</b></span></h1>
+<p class="p2"><span class="s1">Develop a Java application, which automates Auto service system.
+  Auto service company receives from customer an order to repair the car. You need to develop the system which allows to organize this process and find nearby Auto services for customer.
+  All the classes must be in the </span><span class="s2">package </span><span class="s1">"uz.ttpu".</span></p>
+<p class="p3"><span class="s1"></span><br></p>
+<h2 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 18.0px Times; color: #000000; -webkit-text-stroke: #000000"><span class="s1"><b>R1 - AutoService</b></span></h2>
+<p class="p2"><span class="s1">The system works through the facade class <b>CarRepairing</b>.<span class="Apple-converted-space"> </span></span></p>
+<p class="p2"><span class="s1">The method <b>createAutoService() </b>accepts the auto service id, name and its coordinate (X and Y axes) and creates a <b>AutoService </b>object. The class <b>AutoService </b>provides the method <b>getName()</b>, which returns the AutoService’s name.</span></p>
+<p class="p2"><span class="s1">The method <b>getAutoServices()</b> returns a Collections of AutoServices. The method <b>getAutoService()</b> receives the auto service id as an input and returns the corresponding Auto service object</span>. In case if auto service with corresponding id does not exist, exception <b>NoSuchAutoService</b> is thrown.</p>
+<p class="p2"><span class="s1">By default we assume that auto services work with any kind of services</span></p>
+<h2 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 18.0px Times; color: #000000; -webkit-text-stroke: #000000; min-height: 23.0px"><span class="s1"><b></b></span><br></h2>
+<h2 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 18.0px Times; color: #000000; -webkit-text-stroke: #000000"><span class="s1"><b>R2 - Driver</b></span></h2>
+<p class="p2"><span class="s1">Drivers are added by administrator. The method <b>addDriver()</b> is used </span><span class="s2">to add driver by means of ID, full name and car brand. In case if driver with corresponding ID exist, exception <b>DriverAlreadyExist</b> is thrown.</span><span class="s1"> The class Driver offers the method <b>getName()</b>, which returns the Employees full name.</span></p>
+<p class="p2"><span class="s1">To obtain a specific Driver it is possible to use the method </span><span class="s2"><b>getDriver()</b></span><span class="s1">, which receives the ID of the Driver as a parameter. In case if driver with corresponding ID does not exist, exception <b>NoSuchDriver</b> is thrown.</span></p>
+<p class="p2"><span class="s1">The method <b>getDrivers()</b> returns a Collections of Drivers.</span></p>
+<p class="p6"><span class="s1"></span><br></p>
+<p class="p6"><span class="s1"></span><br></p>
+<h2 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 18.0px Times; color: #000000; -webkit-text-stroke: #000000"><span class="s1"><b>R3 - Services</b></span></h2>
+<p class="p2"><span class="s1">Auto service provides different kind of services (oil change, body repair, diagnostics, battery replacement...). Each service needs to be created by administrator before it is used by driver or auto service. </span></p>
+<p class="p2"><span class="s1">The method <b>createService() </b>accepts the service id and name and its cost and creates a <b>Service </b>object.</span></p>
+<p class="p2"><span class="s1">The method <b>getService()</b> receives the service id as an input and returns the corresponding service object</span>. In case if auto service with corresponding id does not exist, exception <b>NoSuchService</b> is thrown.</p>
+<p class="p6"><span class="s1"></span><br></p>
+<p class="p6"><span class="s1"></span><br></p>
+<h2 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 18.0px Times; color: #000000; -webkit-text-stroke: #000000"><span class="s1"><b>R4 - Booking</b></span></h2>
+<p class="p2"><span class="s1">An auto service has method <b>availableAutoServices()</b> which accepts driver ID, driver current position coordinate (X and Y axes) and list of all services needs to be handled. Method returns list of 3 auto services which are located nearby and sorted in ascending way by distance from drivers coordinate to auto services coordinate. </span></p>
+<p class="p2"><span class="s1">An auto service could be booked by means of driver ID, autoService ID and list of all services needs to be handled. This operation could be done through the method <b>bookAutoService()</b>. </span></p>
+<p class="p2"><span class="s1">Method <b>findDistanceBetweenTwoCoordinates()</b> is used to find distance between two coordinates. Method gets two coordinates as an input and returns distance between two coordinates and returns as an output double.</span></p>
+<p class="p6"><span class="s1"></span><br></p>
+<p class="p6"><span class="s1"></span><br></p>
+<h2 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 18.0px Times; color: #000000; -webkit-text-stroke: #000000"><span class="s1"><b>R5  - Statistics</b></span></h2>
+<p class="p2"><span class="s1">Given an auto driver ID, it is possible to know how many times drivers have booked by means of method: <b>getNumberOfBookingsByDrivers()</b>.</span></p>
+<p class="p2"><span class="s1">Given an auto service ID, it is possible to calculate total profit of auto service by method: <b>getAutoServiceTotalProfit()</b>.</span></p>
+</body>
+</html>
